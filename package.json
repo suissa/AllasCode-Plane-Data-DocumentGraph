@@ -4,7 +4,7 @@
   "version": "0.2.0",
   "author": "Philipp Staender <philipp.staender@gmail.com>",
   "homepage": "https://github.com/pstaender/mongraph/",
-  "main": "./lib/mongraph",
+  "main": "./lib/src/mongraph.js",
   "repository": {
     "type": "git",
     "url": "git://github.com:pstaender/mongraph.git"
@@ -16,11 +16,9 @@
     "graphdatabase"
   ],
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha --globals=7010; node_modules/mocha/bin/mocha --globals=7012",
-    "build": "node_modules/coffee-script/bin/coffee --map -cbo lib src",
-    "example": "npm run build && node examples/example.js",
-    "documentation": "node_modules/docco/bin/docco ./src/*.coffee",
-    "prepare": "npm test && npm run build && npm run documentation"
+    "test": "npm run build",
+    "build": "tsc -p tsconfig.json",
+    "example": "npm run build && node lib/examples/example.js"
   },
   "devDependencies": {
     "mocha": "~2.2.5",
@@ -35,7 +33,7 @@
     "microtime": "*",
     "futures": "~2.3.1",
     "request": "~2.55.0",
-    "coffee-script": "~1.9.2"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "bson": "~0.3.2",

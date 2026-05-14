@@ -1,7 +1,8 @@
+// @ts-nocheck
 // required modules
 var mongoose  = require('mongoose')
   , neo4j     = require('neo4j')
-  , mongraph  = require('../lib/mongraph')
+  , mongraph  = require('../src/mongraph')
   , graphdb   = new neo4j.GraphDatabase('http://localhost:7474');
 
 mongoose.connect("mongodb://localhost/mongraph_example");
